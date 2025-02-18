@@ -35,9 +35,9 @@ export class HomePage {
   }
 
   async fillOrigin(origin: string) {
-    await this.page.waitForTimeout(2000);
+    await this.page.waitForTimeout(2000); // Somethimes the input is not ready to be filled
     await this.originInput.clear();
-    await this.originInput.type(origin, { delay: 100 });
+    await this.originInput.pressSequentially(origin, { delay: 100 });
     const button = this.page.locator("button.vy-list-dropdown_item_button", {
       hasText: `${origin},`,
     });
@@ -46,7 +46,7 @@ export class HomePage {
 
   async fillDestination(destination: string) {
     await this.destinationInput.clear();
-    await this.destinationInput.type(destination, { delay: 100 });
+    await this.destinationInput.pressSequentially(destination, { delay: 100 });
     const button = this.page.locator("button.vy-list-dropdown_item_button", {
       hasText: `${destination},`,
     });
