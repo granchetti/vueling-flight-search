@@ -1,0 +1,20 @@
+{
+  "name": "vueling-search-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --format json:./reports/cucumber_report.json && node generate-report.js",
+    "report": "node generate-report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@playwright/test": "^1.50.1",
+    "cucumber-html-reporter": "^6.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
